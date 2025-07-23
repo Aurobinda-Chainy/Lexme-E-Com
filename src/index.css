@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #f5f0f0;
+  color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-org {
+  background: #ff5252;
+  margin: 4px;
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #f5f0f0;
+  font-weight: 600;
+}
+
+.btn-org:hover{
+  background: #dd4949;
+  color:white;
+}
+
+.link:hover {
+  color: #ff5252;
+}
+
+/* Swiper custom styles: */
+.sliderHome {
+  overflow: inherit !important;
+}
+
+
+.swiper-button-prev, .swiper-button-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  box-shadow: 0 1px 3px #0000001f, 0 1px 2px #0000003d !important;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 22px !important;
+  color: #000;
+}
+
+.swiper-scrollbar {
+  background: #e5e5e5;
+  border-radius: 9999px;
+  height: 4px;
+  margin-top: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.homeCatSlider:hover .swiper-scrollbar {
+  opacity: 1;
+}
+
+.swiper-scrollbar-drag {
+  background: #888;
+  border-radius: 9999px;
+}
+
+.swiper-scrollbar-drag:hover {
+  background: #555;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 14px;
+}
+
+.smlBtn .swiper-button-next,
+.smlBtn .swiper-button-prev{
+  width:30px !important; height: 30px !important; min-width: 30px !important; top: 55% !important;
+}
+
+.smlBtn .swiper-button-next:hover,
+.smlBtn .swiper-button-prev:hover{
+  background: #ff5252;
+}
+
+.smlBtn .swiper-button-next:after,
+.smlBtn .swiper-button-prev:after{
+  font-size: 18px !important; 
+  color: #000;
+}
+
+.homeCatSlider .swiper-scrollbar.swiper-scrollbar-horizontal {
+  position: static !important;
+  /* margin-top: 8px; */
+  margin-bottom: 0px;
+}
+
+::-webkit-scrollbar{
+  width: 8px !important; 
+  height: 10px !important;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #ff5252;
+}
+
+::-webkit-scrollbar-track{
+  background: #fff;
+}
+
+.swiper-pagination-bullet-active {
+    background: #ff5252 !important;
+}
+
+.homeSliderV2 .swiper-slide-active .info{
+  right: 0px !important;
+  opacity: 1;
+}
+
+
+
+
