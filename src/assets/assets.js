@@ -62,7 +62,7 @@ import Stone from "./images/Stone.jpg";
 import runningShoe from "./images/runningShoe.jpg"
 import puma from "./images/puma.jpeg"
 import reebok from "./images/reebok.jpeg"
-import Sneakers from "./images/Sneakers.jpg"
+import Sneakers from "./images/sneakers.jpg"
 import Nike from "./images/Nike.webp"
 
 //brand
