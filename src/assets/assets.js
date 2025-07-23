@@ -46,7 +46,7 @@ import Colorbar from "./images/Colorbar.webp"
 import BB from "./images/BB.avif"
 
 import popPro1 from "./images/PopPro1.jpg";
-import popPro2 from "./images/popPro2.jpg";
+import popPro2 from "./images/PopPro2.jpg";
 import popPro3 from "./images/popPro3.avif";
 import popPro4 from "./images/popPro4.jpg";
 import popPro5 from "./images/popPro5.jpeg";
