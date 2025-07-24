@@ -34,7 +34,7 @@ export const CartProvider = ({ children }) => {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/users/cart', {
+      const res = await fetch('http://localhost:5000/api/cart', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

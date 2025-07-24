@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {CartContext} from "../cart/CartContext"
 import { useCart } from '../../screens/cart/useCart';
 import {IoMdClose} from 'react-icons/io';
@@ -6,9 +6,12 @@ import { LiaTrashSolid } from "react-icons/lia";
 import { FiMinus } from "react-icons/fi";
 import { GoPlus } from "react-icons/go";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 
 const CartDrawer = () => {
+    const navigate = useNavigate();
+
     const { cartItems, setIsCartOpen, setCartItems,
         isCartOpen,
     } = useCart();
@@ -17,6 +20,10 @@ const CartDrawer = () => {
         setIsCartOpen(false);
     };
 
+    useEffect(() => {
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    },[cartItems]);
+
     const updateQuantity = (index, delta) =>{
         const updatedItems = [...cartItems];
         const newQty = updatedItems[index].quantity + delta;
@@ -24,12 +31,14 @@ const CartDrawer = () => {
         if(newQty > 0){
             updatedItems[index].quantity =newQty;
             setCartItems(updatedItems);
+            localStorage.setItem("cartItems",JSON.stringify(updatedItems));
         }
     };
 
     const removeItem = (index) =>{
         const updatedItems = cartItems.filter((_,i) => i !== index);
         setCartItems(updatedItems);
+        localStorage.setItem("cartItems",JSON.stringify(updatedItems));
     };
 
     const getTotal = () => 
@@ -86,7 +95,7 @@ const CartDrawer = () => {
                                 Total Amount: <span>₹{getTotal().toFixed(2)}</span>
                             </p>
 
-                            <button className='mt-4 w-full bg-red-500 text-white py-white py-2 rounded hover:bg-red-600 flex items-center justify-center gap-2'>Check Out
+                            <button onClick={()=> navigate("/check-out")} className='mt-4 w-full bg-red-500 text-white py-white py-2 rounded hover:bg-red-600 flex items-center justify-center gap-2'>Check Out
                                 <MdOutlineShoppingCartCheckout className='text-xl'/>
                             </button>
                         </div>

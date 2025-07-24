@@ -90,6 +90,8 @@ import atta from "./images/atta.webp"
 
 import AboutUsBan from "./images/AboutUsBan.jpg"
 
+import notFound from "./images/errorPage.avif"
+
 export {
   logo,
   slider2,
@@ -159,5 +161,6 @@ export {
   milk,
   banana,
   atta,
-  AboutUsBan
+  AboutUsBan,
+  notFound
 };

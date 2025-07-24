@@ -20,6 +20,13 @@ const ProductCard = ({ product }) => {
   };
 
   const handleCheckOut = () =>{
+    const token = localStorage.getItem('token');
+
+    if(!token){
+      alert("Please Log In to Buy.")
+      navigate("/login");
+      return;
+    }
     navigate("/check-out");
   }
 

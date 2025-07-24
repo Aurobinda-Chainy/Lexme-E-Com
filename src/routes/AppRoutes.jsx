@@ -6,6 +6,7 @@ import ProductListing from "../components/productListing/ProductListing";
 import Contact from "../screens/contact/Contact";
 import About from "../screens/about/About";
 import Cart from "../screens/cart/Cart";
+import CheckOut from "../components/checkOut/CheckOut";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
         <Route path="/about-us" element={<About />} />
         <Route path="/products/:category?" element={<ProductListing />} />
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/check-out" element={<CheckOut/>}/>
       </Routes>
     </>
   );
