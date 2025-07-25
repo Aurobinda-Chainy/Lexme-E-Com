@@ -28,7 +28,7 @@ const HomeSlider = () => {
         <img
           src={slider2}
           alt="slider_banner"
-          className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-purple-200
+          className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-cover
          "
         />
       </SwiperSlide>
@@ -36,21 +36,21 @@ const HomeSlider = () => {
         <img
           src={slider3}
           alt="slider_banner"
-          className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-yellow-200"
+          className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-cover"
         />
       </SwiperSlide>
       <SwiperSlide className="rounded-xl overflow-hidden">
         <img
           src={slider4}
           alt="slider_banner"
-          className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-blue-200"
+          className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-cover"
         />
       </SwiperSlide>
       <SwiperSlide className="rounded-xl overflow-hidden">
         <img
           src={slider5}
           alt="slider_banner"
-          className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-yellow-200"
+          className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-cover"
         />
       </SwiperSlide>
     </Swiper>
