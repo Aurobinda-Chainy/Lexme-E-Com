@@ -8,15 +8,15 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-6 space-y-12">
      
-      <div className="relative h-[300px] md:h-[400px] overflow-hidden">
+      <div className="relative h-[300px] sm:h-[400px] overflow-hidden flex items-center justify-start">
         <img
           src={AboutUsBan}
           alt="E-commerce Banner"
-          className="w-full h-auto object-fill"
+          className="absolute inset-0 w-full h-full object-cover z-0"
         />
-        <div className="absolute top-[240px] left-6 bg-white/30 backdrop-blur-md rounded-lg px-6 py-4 shadow-lg text-black">
-          <h1 className="text-3xl md:text-4xl font-bold">Welcome to Lexme Store</h1>
-          <p className="text-lg mt-2">Your one-stop destination for quality, value, and convenience</p>
+        <div className="relative z-10 left-6 bg-white/30 backdrop-blur-md rounded-lg px-4 py-3 sm:px-6 sm:py-4 ml-4 sm-ml-8 max-w-[90%] shadow-lg text-black">
+          <h1 className="text-xl sm:text-3xl md:text-4xl font-bold">Welcome to Lexme Store</h1>
+          <p className="text-sm sm:text-base md:text-lg mt-1 sm:mt-2">Your one-stop destination for quality, value, and convenience</p>
         </div>
       </div>
 
