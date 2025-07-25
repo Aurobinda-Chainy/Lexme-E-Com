@@ -25,16 +25,16 @@ const HomeSlider = () => {
         className="smlBtn rounded-xl overflow-hidden shadow bg-white"
       >
       <SwiperSlide  className="rounded-xl overflow-hidden">
-         <img src={slider2} alt="slider_banner" className="w-full h-auto object-cover"/>
+         <img src={slider2} alt="slider_banner" className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-purple-200"/>
       </SwiperSlide>
       <SwiperSlide  className="rounded-xl overflow-hidden" >
-         <img src={slider3} alt="slider_banner" className="w-full h-auto object-cover"/>
+         <img src={slider3} alt="slider_banner" className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-yellow-200"/>
       </SwiperSlide>
       <SwiperSlide  className="rounded-xl overflow-hidden" >
-         <img src={slider4} alt="slider_banner" className="w-full h-auto object-cover"/>
+         <img src={slider4} alt="slider_banner" className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-blue-200"/>
       </SwiperSlide>
       <SwiperSlide  className="rounded-xl overflow-hidden" >
-         <img src={slider5} alt="slider_banner" className="w-full h-auto object-cover"/>
+         <img src={slider5} alt="slider_banner" className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-yellow-200"/>
       </SwiperSlide>
     </Swiper>
   );
