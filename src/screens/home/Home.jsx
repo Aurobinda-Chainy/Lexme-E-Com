@@ -38,12 +38,12 @@ const Home = () => {
            </section>
 
           <section className="py-6">
-            <div className="container mx-auto flex flex-col lg:flex-row gap-5">
+            <div className="container mx-auto md:flex flex-col lg:flex-row gap-5 hidden ">
                  <div className="part1 w-full lg:w-[70%]">
                     <HomeSliderV/>
                  </div>
 
-                 <div className="part2 w-full lg:w-[30%] flex flex-row items-center justify-between lg:flex-col gap-5">
+                 <div className="part2  w-full lg:w-[30%] flex flex-row items-center justify-between lg:flex-col gap-5">
                     <BannerV info="right" image={BannerV2}
                     title="Buy Men's Footwear with low price"
                     price="$129.00" 

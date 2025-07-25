@@ -1,40 +1,57 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { slider2, slider3, slider4, slider5 } from '../../assets/assets';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { slider2, slider3, slider4, slider5 } from "../../assets/assets";
 
 const HomeSlider = () => {
   return (
-     <Swiper
-         loop={true}
-        spaceBetween={20}
-        centeredSlides={false}
-        slidesPerView={1}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="smlBtn rounded-xl overflow-hidden shadow bg-white"
-      >
-      <SwiperSlide  className="rounded-xl overflow-hidden">
-         <img src={slider2} alt="slider_banner" className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-purple-200"/>
+    <Swiper
+      loop={true}
+      spaceBetween={20}
+      centeredSlides={false}
+      slidesPerView={1}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      navigation={true}
+      modules={[Autoplay, Pagination, Navigation]}
+      className="smlBtn rounded-xl overflow-hidden shadow bg-white"
+    >
+      <SwiperSlide className="rounded-xl overflow-hidden">
+        <img
+          src={slider2}
+          alt="slider_banner"
+          className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-purple-200
+         "
+        />
       </SwiperSlide>
-      <SwiperSlide  className="rounded-xl overflow-hidden" >
-         <img src={slider3} alt="slider_banner" className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-yellow-200"/>
+      <SwiperSlide className="rounded-xl overflow-hidden">
+        <img
+          src={slider3}
+          alt="slider_banner"
+          className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-yellow-200"
+        />
       </SwiperSlide>
-      <SwiperSlide  className="rounded-xl overflow-hidden" >
-         <img src={slider4} alt="slider_banner" className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-blue-200"/>
+      <SwiperSlide className="rounded-xl overflow-hidden">
+        <img
+          src={slider4}
+          alt="slider_banner"
+          className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-blue-200"
+        />
       </SwiperSlide>
-      <SwiperSlide  className="rounded-xl overflow-hidden" >
-         <img src={slider5} alt="slider_banner" className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-yellow-200"/>
+      <SwiperSlide className="rounded-xl overflow-hidden">
+        <img
+          src={slider5}
+          alt="slider_banner"
+          className="w-full h-[150px] sm:h-[300px] md:h-[400px] lg:h-[300px] object-contain bg-yellow-200"
+        />
       </SwiperSlide>
     </Swiper>
   );
