@@ -180,9 +180,9 @@ const Header = () => {
                 </div>
               )}
 
-              <button onClick={() => setIsWishlistOpen(true)}>
+              <Link to="/wishlist">
                 <FaRegHeart className="text-xl link" />
-              </button>
+              </Link>
                <button onClick={() => setIsCartOpen(true)}>
                 <PiShoppingCartSimpleBold className="text-xl link"/>
               </button>
