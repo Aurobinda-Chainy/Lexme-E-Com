@@ -1,12 +1,14 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { MdZoomOutMap } from "react-icons/md";
 import {useCart} from "../../screens/cart/useCart"
+import { useWishlist } from "../../screens/wishList/WishlistContext";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const {addToCart} = useCart();
+  const { wishlistItems, addToWishlist, removeFromWishlist} = useWishlist();
 
   const handleAddToCart = () =>{
     const token = localStorage.getItem('token');
@@ -28,7 +30,17 @@ const ProductCard = ({ product }) => {
       return;
     }
     navigate("/check-out");
-  }
+  };
+
+  const isInWishlist = wishlistItems.some(item => item.id === product.id);
+
+  const toggeleWithlist = () => {
+    if(isInWishlist){
+      removeFromWishlist(product.id);
+    }else{
+      addToWishlist(product);
+    }
+  };
 
   return (
     <div className="bg-white rounded shadow-lg p-2">
@@ -44,11 +56,25 @@ const ProductCard = ({ product }) => {
           </span>
 
           <div className="actions absolute top-[-200px] right-[5px] z-10 flex items-center gap-2 flex-col w-[50px] transition-all duration-300 group-hover:top-[15px] opacity-0 group-hover:opacity-100">
-            <button className="w-[35px] h-[35px] rounded-full bg-white hover:bg-[#ff5252] hover:text-white shadow flex items-center justify-center cursor-pointer">
+            <button className="w-[35px] h-[35px] rounded-full bg-white hover:bg-[#ff5252] hover:text-white shadow flex items-center justify-center cursor-pointer"
+            >
               <MdZoomOutMap className="text-[18px] text-black hover:text-white" />
             </button>
-            <button className="w-[35px] h-[35px] rounded-full bg-white hover:bg-[#ff5252] hover:text-white shadow flex items-center justify-center cursor-pointer">
-              <FaRegHeart className="text-[18px] text-black hover:text-white" />
+            <button className="w-[35px] h-[35px] rounded-full bg-white hover:bg-[#ff5252] hover:text-white shadow flex items-center justify-center cursor-pointer"
+            onClick={(e) =>{
+              e.preventDefault();
+              e.stopPropagation();
+               toggeleWithlist();
+            }
+             } 
+            title={isInWishlist ? "Remove from Wishlist" : "Add to Wishlist"}
+            
+            >
+              {isInWishlist? (
+                <FaHeart className="text-[18px] text-red-500"/>
+              ) : (
+                  <FaRegHeart className="text-[18px] text-black hover:text-white" />
+              )}
             </button>
           </div>
         </div>
@@ -68,6 +94,7 @@ const ProductCard = ({ product }) => {
           <span className="text-red-600 font-semibold">{product.price}</span>
         </div>
       </Link>
+
       <div className="mt-2 flex gap-2">
         <button className="w-1/2 border border-red-500 text-red-500 text-xs font-semibold py-1 rounded cursor-pointer hover:bg-red-500 hover:text-white transition"
         onClick={handleAddToCart} >

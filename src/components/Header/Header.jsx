@@ -10,6 +10,8 @@ import Navigation from "./Navigation/Navigation";
 
 import { useCart } from "../../screens/cart/useCart";
 import CartDrawer from "../../screens/cart/CartDrawer";
+import WishlistDrawer from "../../screens/wishList/WishlistDrawer";
+import { useWishlist } from "../../screens/wishList/WishlistContext";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -17,6 +19,7 @@ const Header = () => {
   const [user, setUser] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const {isCartOpen, setIsCartOpen } = useCart();
+  const {isWishlistOpen, setIsWishlistOpen } = useWishlist();
 
   const navigate = useNavigate();
 
@@ -136,9 +139,9 @@ const Header = () => {
                   </Link>
                 </>
               )}
-              <Link to="/wishlist">
+              <button onClick={() => setIsWishlistOpen(true)}>
                 <FaRegHeart className="text-xl link" />
-              </Link>
+              </button>
               <button onClick={() => setIsCartOpen(true)}>
                 <PiShoppingCartSimpleBold className="text-xl link"/>
               </button>
@@ -177,9 +180,9 @@ const Header = () => {
                 </div>
               )}
 
-              <Link to="/wishlist">
+              <button onClick={() => setIsWishlistOpen(true)}>
                 <FaRegHeart className="text-xl link" />
-              </Link>
+              </button>
                <button onClick={() => setIsCartOpen(true)}>
                 <PiShoppingCartSimpleBold className="text-xl link"/>
               </button>
@@ -237,6 +240,7 @@ const Header = () => {
 
       <Navigation />
       {isCartOpen && <CartDrawer/>}
+      {isWishlistOpen && <WishlistDrawer/>}
     </>
   );
 };
