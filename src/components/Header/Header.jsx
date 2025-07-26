@@ -18,8 +18,8 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const {isCartOpen, setIsCartOpen } = useCart();
-  const {isWishlistOpen, setIsWishlistOpen } = useWishlist();
+  const { isCartOpen, setIsCartOpen } = useCart();
+  const { isWishlistOpen, setIsWishlistOpen } = useWishlist();
 
   const navigate = useNavigate();
 
@@ -143,7 +143,7 @@ const Header = () => {
                 <FaRegHeart className="text-xl link" />
               </button>
               <button onClick={() => setIsCartOpen(true)}>
-                <PiShoppingCartSimpleBold className="text-xl link"/>
+                <PiShoppingCartSimpleBold className="text-xl link" />
               </button>
             </div>
 
@@ -180,11 +180,11 @@ const Header = () => {
                 </div>
               )}
 
-              <Link to="/wishlist">
-                <FaRegHeart className="text-xl link" />
-              </Link>
-               <button onClick={() => setIsCartOpen(true)}>
-                <PiShoppingCartSimpleBold className="text-xl link"/>
+              <button onClick={() => setIsWishlistOpen(true)}>
+                <FaRegHeart />
+              </button>
+              <button onClick={() => setIsCartOpen(true)}>
+                <PiShoppingCartSimpleBold className="text-xl link" />
               </button>
 
               <button onClick={toggleMenu}>
@@ -239,8 +239,8 @@ const Header = () => {
       </header>
 
       <Navigation />
-      {isCartOpen && <CartDrawer/>}
-      {isWishlistOpen && <WishlistDrawer/>}
+      {isCartOpen && <CartDrawer />}
+      {isWishlistOpen && <WishlistDrawer />}
     </>
   );
 };
