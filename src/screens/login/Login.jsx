@@ -20,7 +20,7 @@ const handleLogin = async(e) => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ email_id: email, password }),
+            body: JSON.stringify({email, password }),
         });
 
         const contentType = res.headers.get("content-type");
